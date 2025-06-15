@@ -1,0 +1,166 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="About Us - OrganicTattva">
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-br from-organic-green to-organic-light text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl lg:text-5xl font-bold mb-6">Our Journey Towards Organic Living</h1>
+        <p class="text-xl text-green-100 leading-relaxed">
+          Committed to ecology, fairness, hygiene, and creating a sustainable circular ecosystem that benefits farmers, consumers, and the environment.
+        </p>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Mission & Vision</h2>
+            <p class="text-lg text-gray-600 mb-6">
+              To promote healthier living through 100% certified organic foods, nurturing a sustainable ecosystem that connects conscious consumers with dedicated farmers across India.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-organic-green rounded-full flex items-center justify-center mt-1">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <p class="text-gray-700">Make pure, organic food easily accessible to Indian households</p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-organic-green rounded-full flex items-center justify-center mt-1">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <p class="text-gray-700">Support sustainable farming practices across India</p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-organic-green rounded-full flex items-center justify-center mt-1">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <p class="text-gray-700">Ensure complete transparency from farm to fork</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <img 
+              src="https://images.pexels.com/photos/1327838/pexels-photo-1327838.jpeg?auto=compress&cs=tinysrgb&w=800" 
+              alt="Organic farming" 
+              class="w-full h-96 object-cover rounded-2xl shadow-xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Impact -->
+    <section class="py-20 bg-warm-gray">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Impact</h2>
+          <p class="text-xl text-gray-600">Creating positive change across India's agricultural landscape</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-white p-8 rounded-2xl text-center shadow-lg">
+            <div class="text-4xl font-bold text-organic-green mb-2">9,000+</div>
+            <div class="text-gray-600">Farmers Supported</div>
+            <p class="text-sm text-gray-500 mt-2">Trained in sustainable practices</p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl text-center shadow-lg">
+            <div class="text-4xl font-bold text-organic-green mb-2">140+</div>
+            <div class="text-gray-600">Product SKUs</div>
+            <p class="text-sm text-gray-500 mt-2">Across multiple categories</p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl text-center shadow-lg">
+            <div class="text-4xl font-bold text-organic-green mb-2">250+</div>
+            <div class="text-gray-600">Quality Checkpoints</div>
+            <p class="text-sm text-gray-500 mt-2">Rigorous testing standards</p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl text-center shadow-lg">
+            <div class="text-4xl font-bold text-organic-green mb-2">100%</div>
+            <div class="text-gray-600">Organic Certified</div>
+            <p class="text-sm text-gray-500 mt-2">Every single product</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Story</h2>
+        </div>
+        
+        <div class="prose prose-lg mx-auto text-gray-700">
+          <p class="text-xl leading-relaxed mb-8">
+            Founded with a vision to transform India's food landscape, OrganicTattva began as a mission to bridge the gap between conscious consumers and dedicated organic farmers. We recognized that while demand for organic food was growing, access to truly certified, traceable organic products remained limited.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+            <div class="bg-organic-light bg-opacity-10 p-6 rounded-xl">
+              <h3 class="text-xl font-semibold text-organic-green mb-3">Farmer-Centric Approach</h3>
+              <p>We work directly with over 9,000 farmers across India, providing them with training, fair compensation, and sustainable farming techniques that improve soil health and crop quality.</p>
+            </div>
+            <div class="bg-organic-accent bg-opacity-10 p-6 rounded-xl">
+              <h3 class="text-xl font-semibold text-organic-green mb-3">Quality Assurance</h3>
+              <p>Every product undergoes rigorous testing at 250+ checkpoints, ensuring that what reaches your table is free from pesticides, chemicals, and harmful additives.</p>
+            </div>
+          </div>
+          
+          <p class="text-lg leading-relaxed">
+            Today, we're proud to be a trusted name in organic foods, endorsed by celebrities and chosen by thousands of families across India. Our commitment to transparency, quality, and sustainability continues to drive everything we do.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Values -->
+    <section class="py-20 bg-organic-green text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold mb-4">Our Core Values</h2>
+          <p class="text-xl text-green-100">The principles that guide everything we do</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="text-4xl mb-4">🌱</div>
+            <h3 class="text-xl font-semibold mb-2">Sustainability</h3>
+            <p class="text-green-100">Protecting our planet for future generations</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">🤝</div>
+            <h3 class="text-xl font-semibold mb-2">Fairness</h3>
+            <p class="text-green-100">Ensuring fair compensation for all farmers</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">🔬</div>
+            <h3 class="text-xl font-semibold mb-2">Quality</h3>
+            <p class="text-green-100">Uncompromising standards in every product</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">💚</div>
+            <h3 class="text-xl font-semibold mb-2">Transparency</h3>
+            <p class="text-green-100">Complete visibility from farm to fork</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>

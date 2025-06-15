@@ -1,0 +1,358 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const recipes = [
+  {
+    id: 1,
+    title: "Organic Dal Vada",
+    category: "Snacks",
+    cookTime: "30 mins",
+    difficulty: "Easy",
+    image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600",
+    description: "Crispy and healthy dal vadas made with organic mixed dal and spices",
+    ingredients: [
+      "1 cup OrganicTattva Mixed Dal",
+      "2 green chilies, chopped",
+      "1 inch ginger, grated",
+      "1 tsp OrganicTattva Turmeric Powder",
+      "1 tsp OrganicTattva Coriander Powder",
+      "Salt to taste",
+      "OrganicTattva Sunflower Oil for frying"
+    ],
+    instructions: [
+      "Soak mixed dal for 3-4 hours",
+      "Grind coarsely with minimal water",
+      "Add spices, ginger, and green chilies",
+      "Mix well and shape into small balls",
+      "Deep fry in hot oil until golden brown",
+      "Serve hot with mint chutney"
+    ]
+  },
+  {
+    id: 2,
+    title: "Wheat Dalia Upma",
+    category: "Breakfast",
+    cookTime: "25 mins",
+    difficulty: "Easy",
+    image: "https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=600",
+    description: "Nutritious breakfast made with organic wheat dalia and vegetables",
+    ingredients: [
+      "1 cup OrganicTattva Wheat Dalia",
+      "2 tbsp OrganicTattva Mustard Oil",
+      "1 tsp mustard seeds",
+      "1 tsp cumin seeds",
+      "2 green chilies, slit",
+      "1 inch ginger, chopped",
+      "1 onion, chopped",
+      "Mixed vegetables (carrots, peas, beans)",
+      "1/2 tsp OrganicTattva Turmeric Powder",
+      "Salt to taste",
+      "Fresh coriander leaves"
+    ],
+    instructions: [
+      "Dry roast dalia until aromatic",
+      "Heat oil, add mustard and cumin seeds",
+      "Add ginger, chilies, and onions",
+      "Add vegetables and cook for 5 minutes",
+      "Add roasted dalia and mix well",
+      "Add 2.5 cups water and turmeric",
+      "Cook covered for 15 minutes",
+      "Garnish with coriander and serve hot"
+    ]
+  },
+  {
+    id: 3,
+    title: "Golden Turmeric Latte",
+    category: "Beverages",
+    cookTime: "10 mins",
+    difficulty: "Easy",
+    image: "https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=600",
+    description: "Healing golden milk with organic turmeric and spices",
+    ingredients: [
+      "1 cup milk (dairy or plant-based)",
+      "1/2 tsp OrganicTattva Turmeric Powder",
+      "1/4 tsp cinnamon powder",
+      "Pinch of black pepper",
+      "1 tsp OrganicTattva Raw Honey",
+      "1/4 tsp ginger powder"
+    ],
+    instructions: [
+      "Heat milk in a saucepan",
+      "Add turmeric, cinnamon, and ginger",
+      "Whisk well to avoid lumps",
+      "Simmer for 3-4 minutes",
+      "Add honey and black pepper",
+      "Serve warm in a mug"
+    ]
+  },
+  {
+    id: 4,
+    title: "Organic Quinoa Salad",
+    category: "Healthy Meals",
+    cookTime: "20 mins",
+    difficulty: "Medium",
+    image: "https://images.pexels.com/photos/1458736/pexels-photo-1458736.jpeg?auto=compress&cs=tinysrgb&w=600",
+    description: "Protein-rich quinoa salad with fresh vegetables and herbs",
+    ingredients: [
+      "1 cup OrganicTattva Quinoa",
+      "2 cups water",
+      "1 cucumber, diced",
+      "2 tomatoes, chopped",
+      "1 bell pepper, diced",
+      "1/4 cup red onion, finely chopped",
+      "1/4 cup fresh mint leaves",
+      "1/4 cup fresh coriander",
+      "2 tbsp OrganicTattva Sesame Oil",
+      "2 tbsp lemon juice",
+      "Salt and pepper to taste"
+    ],
+    instructions: [
+      "Rinse quinoa thoroughly",
+      "Cook quinoa in water for 15 minutes",
+      "Let it cool completely",
+      "Mix all vegetables and herbs",
+      "Whisk oil, lemon juice, salt, and pepper",
+      "Combine quinoa with vegetables",
+      "Add dressing and toss well",
+      "Chill for 30 minutes before serving"
+    ]
+  },
+  {
+    id: 5,
+    title: "Homemade Garam Masala",
+    category: "Spice Blends",
+    cookTime: "15 mins",
+    difficulty: "Easy",
+    image: "https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&w=600",
+    description: "Aromatic homemade garam masala using organic whole spices",
+    ingredients: [
+      "2 tbsp OrganicTattva Coriander Seeds",
+      "1 tbsp OrganicTattva Cumin Seeds",
+      "1 tsp black peppercorns",
+      "4-5 green cardamom pods",
+      "2 black cardamom pods",
+      "4-5 cloves",
+      "2 bay leaves",
+      "1 inch cinnamon stick"
+    ],
+    instructions: [
+      "Dry roast all spices separately",
+      "Cool completely before grinding",
+      "Grind to a fine powder",
+      "Sieve to remove any coarse particles",
+      "Store in an airtight container",
+      "Use within 6 months for best flavor"
+    ]
+  },
+  {
+    id: 6,
+    title: "Organic Ghee Rice",
+    category: "Main Course",
+    cookTime: "35 mins",
+    difficulty: "Medium",
+    image: "https://images.pexels.com/photos/1556688/pexels-photo-1556688.jpeg?auto=compress&cs=tinysrgb&w=600",
+    description: "Fragrant basmati rice cooked in pure A2 cow ghee with whole spices",
+    ingredients: [
+      "2 cups OrganicTattva Basmati Rice",
+      "3 tbsp OrganicTattva A2 Cow Ghee",
+      "4-5 green cardamom pods",
+      "2 bay leaves",
+      "1 inch cinnamon stick",
+      "4-5 cloves",
+      "1 tsp cumin seeds",
+      "3.5 cups water",
+      "Salt to taste",
+      "Fresh mint leaves for garnish"
+    ],
+    instructions: [
+      "Wash and soak rice for 30 minutes",
+      "Heat ghee in a heavy-bottomed pot",
+      "Add whole spices and cumin seeds",
+      "Add drained rice and sauté for 2 minutes",
+      "Add water and salt, bring to boil",
+      "Cover and cook on low heat for 18 minutes",
+      "Let it rest for 5 minutes",
+      "Garnish with mint and serve hot"
+    ]
+  }
+];
+
+const categories = ["All", "Breakfast", "Snacks", "Main Course", "Healthy Meals", "Beverages", "Spice Blends"];
+---
+
+<Layout title="Organic Recipes - OrganicTattva" description="Discover healthy and delicious recipes using our certified organic ingredients. From traditional Indian dishes to modern healthy meals.">
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="py-16 bg-gradient-to-br from-organic-green to-organic-light text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl lg:text-5xl font-bold mb-6">Organic Recipe Collection</h1>
+        <p class="text-xl text-green-100">
+          Discover delicious and healthy recipes using our premium organic ingredients. From traditional Indian favorites to modern healthy meals.
+        </p>
+      </div>
+    </section>
+
+    <!-- Recipe Categories Filter -->
+    <section class="py-8 bg-white border-b">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap gap-4 justify-center">
+          {categories.map((category) => (
+            <button class="px-6 py-2 rounded-full border-2 border-organic-green text-organic-green hover:bg-organic-green hover:text-white transition-colors font-medium">
+              {category}
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Recipes Grid -->
+    <section class="py-16 bg-warm-gray">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {recipes.map((recipe) => (
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div class="relative">
+                <img 
+                  src={recipe.image} 
+                  alt={recipe.title}
+                  class="w-full h-48 object-cover"
+                />
+                <div class="absolute top-4 left-4">
+                  <span class="bg-organic-green text-white px-3 py-1 rounded-full text-sm font-medium">
+                    {recipe.category}
+                  </span>
+                </div>
+                <div class="absolute top-4 right-4 bg-white bg-opacity-90 px-3 py-1 rounded-full">
+                  <span class="text-sm font-medium text-gray-700">{recipe.cookTime}</span>
+                </div>
+              </div>
+              
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-2">
+                  <h3 class="text-xl font-semibold text-gray-900">{recipe.title}</h3>
+                  <span class="text-sm text-organic-green font-medium">{recipe.difficulty}</span>
+                </div>
+                <p class="text-gray-600 mb-4">{recipe.description}</p>
+                
+                <div class="space-y-4">
+                  <div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Ingredients:</h4>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                      {recipe.ingredients.slice(0, 3).map((ingredient) => (
+                        <li class="flex items-start">
+                          <span class="text-organic-green mr-2">•</span>
+                          {ingredient}
+                        </li>
+                      ))}
+                      {recipe.ingredients.length > 3 && (
+                        <li class="text-organic-green font-medium">
+                          +{recipe.ingredients.length - 3} more ingredients
+                        </li>
+                      )}
+                    </ul>
+                  </div>
+                  
+                  <button class="w-full bg-organic-green text-white py-3 rounded-lg hover:bg-opacity-90 transition-colors font-medium">
+                    View Full Recipe
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Recipe Tips -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Cooking with Organic Ingredients</h2>
+          <p class="text-xl text-gray-600">Tips for getting the best results with our organic products</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center p-6 bg-gradient-to-br from-organic-light/10 to-organic-accent/10 rounded-xl">
+            <div class="text-4xl mb-4">🌾</div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Quality Ingredients</h3>
+            <p class="text-gray-600">Our organic ingredients are more flavorful and nutritious, so you may need to adjust quantities compared to conventional products.</p>
+          </div>
+          <div class="text-center p-6 bg-gradient-to-br from-organic-light/10 to-organic-accent/10 rounded-xl">
+            <div class="text-4xl mb-4">⏰</div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Cooking Times</h3>
+            <p class="text-gray-600">Organic grains and pulses may require slightly longer cooking times but offer better texture and taste.</p>
+          </div>
+          <div class="text-center p-6 bg-gradient-to-br from-organic-light/10 to-organic-accent/10 rounded-xl">
+            <div class="text-4xl mb-4">💚</div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Storage Tips</h3>
+            <p class="text-gray-600">Store organic products in airtight containers in cool, dry places to maintain freshness and prevent pest infestation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="py-16 bg-organic-green text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold mb-4">Get Weekly Recipe Ideas</h2>
+        <p class="text-xl text-green-100 mb-8">
+          Subscribe to receive new organic recipes and cooking tips every week
+        </p>
+        
+        <div class="max-w-md mx-auto">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <input 
+              type="email" 
+              placeholder="Enter your email address"
+              class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-organic-accent"
+            />
+            <button class="bg-organic-accent text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-colors font-medium">
+              Subscribe
+            </button>
+          </div>
+          <p class="text-sm text-green-200 mt-4">
+            Join 5,000+ home cooks. No spam, unsubscribe anytime.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<script>
+  // Simple category filtering functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const categoryButtons = document.querySelectorAll('button[class*="border-organic-green"]');
+    const recipeCards = document.querySelectorAll('.grid > div');
+    
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const category = this.textContent.trim();
+        
+        // Update active button
+        categoryButtons.forEach(btn => {
+          btn.classList.remove('bg-organic-green', 'text-white');
+          btn.classList.add('text-organic-green');
+        });
+        this.classList.add('bg-organic-green', 'text-white');
+        this.classList.remove('text-organic-green');
+        
+        // Filter recipes
+        recipeCards.forEach(card => {
+          const cardCategory = card.querySelector('.bg-organic-green')?.textContent.trim();
+          if (category === 'All' || cardCategory === category) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>

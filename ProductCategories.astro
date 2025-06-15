@@ -1,0 +1,160 @@
+---
+const categories = [
+  {
+    title: "Royal Staples & Grains",
+    description: "Premium organic flours, rice, pulses, and ancient grains",
+    image: "https://images.pexels.com/photos/1556688/pexels-photo-1556688.jpeg?auto=compress&cs=tinysrgb&w=600",
+    products: ["Golden Wheat Flour", "Royal Brown Rice", "Premium Mixed Dal", "Ancient Quinoa"],
+    price: "From ₹180",
+    badge: "Bestseller"
+  },
+  {
+    title: "Golden Oils & Ghee",
+    description: "Cold-pressed oils and A2 cow ghee fit for royalty",
+    image: "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=600",
+    products: ["Royal Mustard Oil", "Golden Sunflower Oil", "Premium A2 Ghee", "Pure Sesame Oil"],
+    price: "From ₹320",
+    badge: "Premium"
+  },
+  {
+    title: "Aromatic Spices & Masalas",
+    description: "Pure spices and traditional masala blends from royal kitchens",
+    image: "https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&w=600",
+    products: ["Golden Turmeric", "Royal Coriander", "Garam Masala", "Sambar Powder"],
+    price: "From ₹120",
+    badge: "Organic"
+  },
+  {
+    title: "Luxury Health Foods",
+    description: "Natural honey, dry fruits, and superfoods for wellness",
+    image: "https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=600",
+    products: ["Royal Raw Honey", "Premium Almonds", "Golden Makhana", "Triphala Powder"],
+    price: "From ₹450",
+    badge: "Superfood"
+  },
+  {
+    title: "Royal Ready-to-Cook",
+    description: "Breakfast combos and instant mixes for modern royalty",
+    image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600",
+    products: ["Royal Dosa Mix", "Premium Idli Batter", "Gluten-Free Packs", "Spice Kits"],
+    price: "From ₹250",
+    badge: "Convenient"
+  },
+  {
+    title: "Gourmet Snacks & More",
+    description: "Healthy snacks and seasonal products for discerning taste",
+    image: "https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=600",
+    products: ["Roasted Royal Nuts", "Organic Royal Tea", "Golden Jaggery", "Artisan Pickles"],
+    price: "From ₹199",
+    badge: "Gourmet"
+  }
+];
+
+const badgeColors = {
+  "Bestseller": "bg-royal-gold text-white",
+  "Premium": "bg-amber-glow text-white",
+  "Organic": "bg-sage-green text-white",
+  "Superfood": "bg-forest-green text-white",
+  "Convenient": "bg-honey-yellow text-white",
+  "Gourmet": "bg-earth-brown text-white"
+};
+---
+
+<section class="py-24 bg-gradient-to-br from-pearl-white via-cream-luxury to-champagne relative overflow-hidden">
+  <!-- Decorative Elements -->
+  <div class="absolute inset-0 bg-organic-texture opacity-20"></div>
+  <div class="absolute top-20 right-10 w-64 h-64 bg-royal-gold/5 organic-shape float-element"></div>
+  <div class="absolute bottom-20 left-10 w-48 h-48 bg-sage-green/5 organic-shape-2 float-element" style="animation-delay: -3s;"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Luxury Section Header -->
+    <div class="text-center mb-20 animate-fade-in">
+      <div class="inline-flex items-center space-x-2 bg-golden-gradient px-6 py-2 rounded-full text-white font-medium mb-6">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+        </svg>
+        <span>Premium Collection</span>
+      </div>
+      
+      <h2 class="heading-luxury text-5xl lg:text-6xl text-charcoal mb-6">
+        Our Royal <span class="text-shimmer">Product</span> Categories
+      </h2>
+      <div class="organic-divider"></div>
+      <p class="text-xl text-charcoal/80 max-w-4xl mx-auto text-elegant leading-relaxed">
+        Discover our exquisite range of certified organic products, carefully curated from the finest farms across India. 
+        Each category represents the pinnacle of purity, quality, and royal taste.
+      </p>
+    </div>
+    
+    <!-- Luxury Product Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      {categories.map((category, index) => (
+        <div class="luxury-card bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden shadow-luxury hover:shadow-royal border border-golden-yellow/20 group animate-slide-up" style={`animation-delay: ${index * 0.1}s`}>
+          <div class="relative overflow-hidden">
+            <img 
+              src={category.image} 
+              alt={category.title}
+              class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <!-- Golden Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-royal-gold/20 via-transparent to-transparent"></div>
+            
+            <!-- Premium Badge -->
+            <div class={`absolute top-4 left-4 ${badgeColors[category.badge]} px-4 py-2 rounded-full text-sm font-semibold shadow-soft`}>
+              {category.badge}
+            </div>
+
+            <!-- Price Tag -->
+            <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow-soft">
+              <span class="text-royal-gold font-bold text-sm">{category.price}</span>
+            </div>
+          </div>
+          
+          <div class="p-8">
+            <h3 class="heading-luxury text-2xl text-charcoal mb-3 group-hover:text-royal-gold transition-colors duration-300">
+              {category.title}
+            </h3>
+            <p class="text-charcoal/70 mb-6 text-elegant leading-relaxed">{category.description}</p>
+            
+            <!-- Product Tags -->
+            <div class="flex flex-wrap gap-2 mb-6">
+              {category.products.map((product) => (
+                <span class="px-3 py-1 bg-cream-luxury border border-golden-yellow/30 text-charcoal text-sm rounded-full hover:bg-golden-yellow/10 transition-colors">
+                  {product}
+                </span>
+              ))}
+            </div>
+            
+            <!-- Luxury CTA Button -->
+            <button class="w-full btn-luxury bg-golden-gradient text-white py-4 rounded-2xl hover:shadow-royal transition-all duration-300 font-semibold text-sm tracking-wide uppercase group-hover:scale-105">
+              <span class="flex items-center justify-center space-x-2">
+                <span>Explore Royal Collection</span>
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </span>
+            </button>
+          </div>
+
+          <!-- Decorative Corner -->
+          <div class="absolute bottom-0 right-0 w-16 h-16 bg-golden-gradient opacity-10 organic-shape-2"></div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Royal Call-to-Action -->
+    <div class="text-center mt-20 animate-fade-in">
+      <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-luxury border border-golden-yellow/30 max-w-4xl mx-auto">
+        <h3 class="heading-luxury text-3xl text-charcoal mb-4">
+          Experience Royal Quality
+        </h3>
+        <p class="text-xl text-charcoal/70 mb-8 text-elegant">
+          Join thousands of families who trust OrganicTattva for their daily nutrition needs
+        </p>
+        <button class="btn-luxury bg-golden-gradient text-white px-12 py-4 rounded-full font-semibold text-lg hover:shadow-royal transition-all duration-300 transform hover:scale-105">
+          View Complete Collection
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,201 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const products = [
+  {
+    id: 1,
+    name: "Organic Wheat Flour",
+    category: "Staples",
+    price: "₹180",
+    originalPrice: "₹200",
+    image: "https://images.pexels.com/photos/4198021/pexels-photo-4198021.jpeg?auto=compress&cs=tinysrgb&w=400",
+    description: "Premium quality organic wheat flour, stone ground for maximum nutrition",
+    certifications: ["USDA Organic", "India Organic"],
+    inStock: true
+  },
+  {
+    id: 2,
+    name: "Cold Pressed Mustard Oil",
+    category: "Oils",
+    price: "₹320",
+    originalPrice: "₹360",
+    image: "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=400",
+    description: "Pure cold-pressed mustard oil with natural antioxidants",
+    certifications: ["Organic", "BRC"],
+    inStock: true
+  },
+  {
+    id: 3,
+    name: "Organic Turmeric Powder",
+    category: "Spices",
+    price: "₹120",
+    originalPrice: "₹140",
+    image: "https://images.pexels.com/photos/4198021/pexels-photo-4198021.jpeg?auto=compress&cs=tinysrgb&w=400",
+    description: "High curcumin content organic turmeric powder",
+    certifications: ["USDA Organic", "Kosher"],
+    inStock: false
+  },
+  {
+    id: 4,
+    name: "Raw Organic Honey",
+    category: "Health Foods",
+    price: "₹450",
+    originalPrice: "₹500",
+    image: "https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=400",
+    description: "Unprocessed raw honey directly from organic beekeepers",
+    certifications: ["Organic", "Jaivik Bharat"],
+    inStock: true
+  },
+  {
+    id: 5,
+    name: "Organic Basmati Rice",
+    category: "Staples",
+    price: "₹280",
+    originalPrice: "₹320",
+    image: "https://images.pexels.com/photos/1556688/pexels-photo-1556688.jpeg?auto=compress&cs=tinysrgb&w=400",
+    description: "Aromatic organic basmati rice from the foothills of Himalayas",
+    certifications: ["USDA Organic", "India Organic"],
+    inStock: true
+  },
+  {
+    id: 6,
+    name: "A2 Cow Ghee",
+    category: "Oils",
+    price: "₹650",
+    originalPrice: "₹750",
+    image: "https://images.pexels.com/photos/4198021/pexels-photo-4198021.jpeg?auto=compress&cs=tinysrgb&w=400",
+    description: "Pure A2 cow ghee made using traditional bilona method",
+    certifications: ["Organic", "Kosher"],
+    inStock: true
+  }
+];
+
+const categories = ["All", "Staples", "Oils", "Spices", "Health Foods"];
+---
+
+<Layout title="Organic Products - OrganicTattva" description="Browse our wide range of certified organic products including staples, oils, spices, and health foods.">
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="py-16 bg-gradient-to-br from-organic-green to-organic-light text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl lg:text-5xl font-bold mb-6">Our Organic Products</h1>
+        <p class="text-xl text-green-100">
+          Discover our complete range of certified organic foods, each one carefully selected and rigorously tested for purity and quality.
+        </p>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="py-8 bg-white border-b">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap gap-4 justify-center">
+          {categories.map((category) => (
+            <button class="px-6 py-2 rounded-full border-2 border-organic-green text-organic-green hover:bg-organic-green hover:text-white transition-colors font-medium">
+              {category}
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-16 bg-warm-gray">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((product) => (
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div class="relative">
+                <img 
+                  src={product.image} 
+                  alt={product.name}
+                  class="w-full h-64 object-cover"
+                />
+                <div class="absolute top-4 left-4">
+                  <span class="bg-organic-green text-white px-3 py-1 rounded-full text-sm font-medium">
+                    {product.category}
+                  </span>
+                </div>
+                {!product.inStock && (
+                  <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                    <span class="bg-red-500 text-white px-4 py-2 rounded-lg font-medium">Out of Stock</span>
+                  </div>
+                )}
+              </div>
+              
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">{product.name}</h3>
+                <p class="text-gray-600 mb-4">{product.description}</p>
+                
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {product.certifications.map((cert) => (
+                    <span class="px-2 py-1 bg-organic-light bg-opacity-20 text-organic-green text-xs rounded-full">
+                      {cert}
+                    </span>
+                  ))}
+                </div>
+                
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center space-x-2">
+                    <span class="text-2xl font-bold text-organic-green">{product.price}</span>
+                    <span class="text-gray-500 line-through">{product.originalPrice}</span>
+                  </div>
+                  <button 
+                    class={`px-6 py-2 rounded-lg font-medium transition-colors ${
+                      product.inStock 
+                        ? 'bg-organic-green text-white hover:bg-opacity-90' 
+                        : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    }`}
+                    disabled={!product.inStock}
+                  >
+                    {product.inStock ? 'Add to Cart' : 'Notify Me'}
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <!-- Load More Button -->
+        <div class="text-center mt-12">
+          <button class="bg-organic-green text-white px-8 py-3 rounded-lg hover:bg-opacity-90 transition-colors font-medium">
+            Load More Products
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Our Products -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Choose Our Products?</h2>
+          <p class="text-xl text-gray-600">Every product is backed by our commitment to quality and sustainability</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center p-6 bg-gradient-to-br from-organic-light/10 to-organic-accent/10 rounded-xl">
+            <div class="text-4xl mb-4">🔬</div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">250+ Quality Checks</h3>
+            <p class="text-gray-600">Every product undergoes rigorous testing for pesticides, heavy metals, and contaminants</p>
+          </div>
+          <div class="text-center p-6 bg-gradient-to-br from-organic-light/10 to-organic-accent/10 rounded-xl">
+            <div class="text-4xl mb-4">🌾</div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Farm Traceability</h3>
+            <p class="text-gray-600">Know exactly which farm your food comes from with our complete traceability system</p>
+          </div>
+          <div class="text-center p-6 bg-gradient-to-br from-organic-light/10 to-organic-accent/10 rounded-xl">
+            <div class="text-4xl mb-4">✅</div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Multi-Certified</h3>
+            <p class="text-gray-600">USDA Organic, India Organic, BRC, and Kosher certified for your peace of mind</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
