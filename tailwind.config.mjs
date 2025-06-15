@@ -21,6 +21,12 @@ export default {
         'pearl-white': '#FAFAFA',
         'charcoal': '#2E2E2E',
         
+        // Legacy organic colors for compatibility
+        'organic-green': '#4CAF50',
+        'organic-light': '#81C784',
+        'organic-accent': '#2E7D32',
+        'warm-gray': '#F5F5F5',
+        
         // Organic gradients
         'sunrise-start': '#FFD54F',
         'sunrise-end': '#FF8F00',
